@@ -10,7 +10,7 @@ def init_board():
             y = random.randint(0, 3)
         board[x][y] = 2
         return board
-        # 打印游戏面板
+# 打印游戏面板
 def print_board(board):
     for i in range(4):
         for j in range(4):
