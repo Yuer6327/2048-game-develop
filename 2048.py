@@ -24,7 +24,7 @@ def merge(board):
                 board[i][j] *= 2
                 board[i][j+1] = 0
     return board
-                # 移动操作
+# 移动操作
 def move(board, direction):
     if direction == 'left':
         for i in range(4):
@@ -45,7 +45,7 @@ def move(board, direction):
             for i in range(4):
                 board[i][j] = col[3-i]
     return board
-    # 判断游戏是否结束
+# 判断游戏是否结束
 def is_game_over(board):
     for i in range(4):
         for j in range(4):
@@ -56,7 +56,7 @@ def is_game_over(board):
             if j < 3 and board[i][j] == board[i][j+1]:
                 return False
     return True
-    # 主函数
+# 主函数
 def main():
     board = init_board()
     print_board(board)
