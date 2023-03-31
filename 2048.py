@@ -26,18 +26,22 @@ def merge(board):
     return board
 # 移动操作
 def move(board, direction):
+    #左
     if direction == 'a':
         for i in range(4):
             board[i] = [x for x in board[i] if x != 0] + [0] * board[i].count(0)
+    #右
     elif direction == 'd':
         for i in range(4):
             board[i] = [0] * board[i].count(0) + [x for x in board[i] if x != 0][::-1]
+    #上
     elif direction == 'w':
         for j in range(4):
             col = [board[i][j] for i in range(4)]
             col = [x for x in col if x != 0] + [0] * col.count(0)
             for i in range(4):
                 board[i][j] = col[i]
+    #下
     elif direction == 's':
         for j in range(4):
             col = [board[i][j] for i in range(4)][::-1]
