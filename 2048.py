@@ -26,19 +26,19 @@ def merge(board):
     return board
 # 移动操作
 def move(board, direction):
-    if direction == 'left':
+    if direction == 'a':
         for i in range(4):
             board[i] = [x for x in board[i] if x != 0] + [0] * board[i].count(0)
-    elif direction == 'right':
+    elif direction == 'd':
         for i in range(4):
             board[i] = [0] * board[i].count(0) + [x for x in board[i] if x != 0][::-1]
-    elif direction == 'up':
+    elif direction == 'w':
         for j in range(4):
             col = [board[i][j] for i in range(4)]
             col = [x for x in col if x != 0] + [0] * col.count(0)
             for i in range(4):
                 board[i][j] = col[i]
-    elif direction == 'down':
+    elif direction == 's':
         for j in range(4):
             col = [board[i][j] for i in range(4)][::-1]
             col = [0] * col.count(0) + [x for x in col if x != 0]
@@ -61,7 +61,7 @@ def main():
     board = init_board()
     print_board(board)
     while not is_game_over(board):
-        direction = input('请输入移动方向（left/right/up/down）：')
+        direction = input('请输入移动方向（a/d/w/s）：')
         board = move(board, direction)
         board = merge(board)
         board = move(board, direction)
