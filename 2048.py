@@ -61,7 +61,7 @@ def main():
     board = init_board()
     print_board(board)
     while not is_game_over(board):
-        direction = input('请输入移动方向（a/d/w/s）：')
+        direction = input('请输入移动方向（w/a/s/d）：')
         board = move(board, direction)
         board = merge(board)
         board = move(board, direction)
