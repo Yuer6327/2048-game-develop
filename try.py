@@ -71,13 +71,13 @@ while not game_over:
 
     # 获取用户输入并更新游戏状态
     key = w.getch()
-    if key == curses.KEY_LEFT:
+    if key == curses.KEY_:
         merge_left()
-    elif key == curses.KEY_RIGHT:
+    elif key == curses.KEY_F2:
         merge_right()
-    elif key == curses.KEY_UP:
+    elif key == curses.KEY_F3:
         merge_up()
-    elif key == curses.KEY_DOWN:
+    elif key == curses.KEY_F4:
         merge_down()
 
     place_new_tile()
