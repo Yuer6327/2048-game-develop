@@ -68,17 +68,23 @@ while not game_over:
         for col in range(4):
             w.addstr(row + 1, col * 5, f"{board[row][col]:5}")
     w.refresh()
-
+def move(direction):
     # 获取用户输入并更新游戏状态
-    key = w.getch()
-    if key == curses.KEY_:
-        merge_left()
-    elif key == curses.KEY_F2:
-        merge_right()
-    elif key == curses.KEY_F3:
-        merge_up()
-    elif key == curses.KEY_F4:
-        merge_down()
+    #key = w.getch()
+    #if key == curses.KEY_A1:
+    while game_over == False:
+        direction == input("w/a/s/d")
+        if direction == 'a':
+            merge_left()
+    #elif key == curses.KEY_F2:
+        if direction == 'd':
+            merge_right()
+    #elif key == curses.KEY_F3:
+        if direction == 'w':
+            merge_up()
+    #elif key == curses.KEY_F4:
+        if direction == 's':
+            merge_down()
 
     place_new_tile()
 
