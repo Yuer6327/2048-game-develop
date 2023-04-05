@@ -61,6 +61,14 @@ def place_new_tile():
 
 # 游戏主循环
 while not game_over:
+    
+    # 绘制游戏板
+    w.clear()
+    w.addstr(0, 0, f"Score: {score}")
+    for row in range(4):
+        for col in range(4):
+            w.addstr(row + 1, col * 5, f"{board[row][col]:5}")
+    w.refresh()
     direction = input("w/a/s/d")
     if direction == 'a':
          merge_left()
@@ -73,13 +81,6 @@ while not game_over:
     #elif key == curses.KEY_F4:
     if direction == 's':
         merge_down()
-    # 绘制游戏板
-    w.clear()
-    w.addstr(0, 0, f"Score: {score}")
-    for row in range(4):
-        for col in range(4):
-            w.addstr(row + 1, col * 5, f"{board[row][col]:5}")
-    w.refresh()
     place_new_tile()
 # 检查游戏是否结束
     game_over = True
