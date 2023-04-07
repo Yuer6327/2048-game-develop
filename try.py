@@ -2,10 +2,10 @@ import random
 import curses
 import time
 # 初始化curses
-s = curses.initscr()
-curses.curs_set(0)
+s = curses.initscr() # type: ignore
+curses.curs_set(0) # type: ignore
 sh, sw = s.getmaxyx()
-w = curses.newwin(sh, sw, 0, 0)
+w = curses.newwin(sh, sw, 0, 0) # type: ignore
 w.keypad(1)
 w.timeout(100)
 
